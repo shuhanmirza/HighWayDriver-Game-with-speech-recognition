@@ -17,15 +17,21 @@ public class Player extends Entity
         this.x = x;
         this.y = y;
         this.game = game;
+        game.getSpeech().r = null;
     }
 
     public void tick()
-    {
-        if (game.getKeyManager().left == true && x >= 123) {
-            x -= 3;
+    {     
+        if("left".equals(game.getSpeech().r))
+        {
+            x = 150;
+            game.getSpeech().r = null;
         }
-        if (game.getKeyManager().right == true && x <= 297) {
-            x += 3;
+        
+        else if("right".equals(game.getSpeech().r))
+        {
+            x = 250;
+            game.getSpeech().r = null;
         }
     }
 

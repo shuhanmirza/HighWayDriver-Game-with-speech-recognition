@@ -2,6 +2,7 @@ package retrorunner.state;
 
 import java.awt.Graphics;
 import retrorunner.Game;
+import retrorunner.speech.Speech;
 
 public abstract class State
 {

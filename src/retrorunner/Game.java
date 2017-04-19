@@ -6,6 +6,7 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 import retrorunner.display.Display;
 import retrorunner.input.KeyManager;
+import retrorunner.speech.Speech;
 import retrorunner.state.*;
 import retrorunnner.gfx.*;
 
@@ -28,6 +29,9 @@ public class Game implements Runnable
 
     //input
     KeyManager keyManager;
+    
+    //speech
+    private Speech speech;
 
     boolean running = false;
 
@@ -48,6 +52,7 @@ public class Game implements Runnable
 
         menuState = new MenuState(this);
         State.setState(menuState);
+        speech = new Speech();
     }
 
     private void tick()
@@ -109,6 +114,11 @@ public class Game implements Runnable
     public KeyManager getKeyManager()
     {
         return keyManager;
+    }
+    
+    public Speech getSpeech()
+    {
+        return speech;
     }
 
     public synchronized void start()

@@ -1,0 +1,11 @@
+#JSGF V1.0;
+
+/**
+ * JSGF Grammar 
+ */
+
+grammar grammar;
+
+public <numbers> = (one | two);
+public <action>  = (left | right | enter );
+public <final>   = (low);
